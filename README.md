@@ -31,6 +31,9 @@ const options = {
   apiKey: "your_api_key",
   apiSecret: "your_api_secret",
   gameId: "game_id",
+  userUrl: "",
+  webhook: "",
+  gameServer: "",
   containerId: "game-container",
 };
 
@@ -49,10 +52,6 @@ You can listen to SDK events using the on method:
 QuestPlaySDK.on("initializedEvent", () => {
   console.log("Game SDK is fully initialized!");
 });
-
-QuestPlaySDK.on("iframeLoaded", () => {
-  console.log("Game iframe has been successfully loaded!");
-});
 ```
 
 
@@ -70,6 +69,9 @@ Initializes the SDK with the required configuration.
 - **apiKey:** Your API key (string, required).
 - **apiSecret:** Your API secret (string, required).
 - **gameId:** The ID of the game to embed (string, required).
+- **userUrl:** API url of user data to fetch balance etc (must be accompained with user id).
+- **webhook:** Webhook callback url to send data to the server example: win/lose state.
+- **gameServer:** QuestPlay game server.
 - **containerId:** The ID of the HTML container element for the game iframe (string).
 
 Returns a promise that resolves when the SDK is successfully initialized.

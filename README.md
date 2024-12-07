@@ -17,7 +17,7 @@ QuestPlay SDK is a lightweight JavaScript SDK designed to seamlessly embed and m
 Include the SDK in your project by adding the following script tag:
 
 ```javascript
-<script src="path/to/questplay-sdk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/InfinityQuestStudio/questplay-sdk-public@[version]/dist/questplay-sdk.js"></script>
 ```
 The SDK will be available globally as window.QuestPlaySDK.
 

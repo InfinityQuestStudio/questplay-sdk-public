@@ -1,7 +1,7 @@
 # QuestPlay SDK
 
 ## Description
-QuestPlay SDK is a lightweight JavaScript SDK designed to seamlessly embed and manage game experiences in your web application. It handles game initialization, secure token generation, iframe embedding, and event handling, making it easier to integrate your games into any website or platform.
+QuestPlay SDK is a lightweight JavaScript SDK designed to seamlessly embed and manage game experiences in your web application. It handles game initialization, secure token generation, iframe embedding, and event handling, making it easier to integrate our games into any website or platform.
 
 
 ## Features
@@ -28,17 +28,31 @@ To initialize the SDK on your website, use the init method with the required con
 
 ```javascript
 const options = {
-  apiKey: "your_api_key",
-  apiSecret: "your_api_secret",
-  gameId: "game_id",
+  apiKey: "",
+  apiSecret: "",
+  gameId: "",
   userUrl: "",
   webhook: "",
   gameServer: "",
-  containerId: "game-container",
+  containerId: "",
 };
 
 QuestPlaySDK.init(options);
 ```
+
+### Parameters:
+
+**options:** An object containing:
+
+- **apiKey:** Your API key (string, required).
+- **apiSecret:** Your API secret (string, required).
+- **gameId:** The ID of the game to embed (string, required).
+- **userUrl:** API url of user data to fetch balance etc (must be accompained with user id).
+- **webhook:** Webhook callback url to send data to the server example: win/lose state.
+- **gameServer:** QuestPlay game server.
+- **containerId:** The ID of the HTML container element for the game iframe (string).
+
+Returns a promise that resolves when the SDK is successfully initialized.
 
 
 ## Embedding a Game
@@ -61,17 +75,3 @@ QuestPlaySDK.on("initializedEvent", () => {
 init(options)
 ```
 Initializes the SDK with the required configuration.
-
-### Parameters:
-
-**options:** An object containing:
-
-- **apiKey:** Your API key (string, required).
-- **apiSecret:** Your API secret (string, required).
-- **gameId:** The ID of the game to embed (string, required).
-- **userUrl:** API url of user data to fetch balance etc (must be accompained with user id).
-- **webhook:** Webhook callback url to send data to the server example: win/lose state.
-- **gameServer:** QuestPlay game server.
-- **containerId:** The ID of the HTML container element for the game iframe (string).
-
-Returns a promise that resolves when the SDK is successfully initialized.
